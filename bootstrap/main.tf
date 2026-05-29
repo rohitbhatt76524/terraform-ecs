@@ -7,7 +7,7 @@ provider "aws" {
 
 # S3 bucket for state
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = "terraform-state-123456789012-fargate"
+  bucket = "terraform-state-879765115308-fargate"
 
   lifecycle {
     prevent_destroy = true  # safety lock — stops accidental deletion
