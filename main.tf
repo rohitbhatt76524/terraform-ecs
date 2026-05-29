@@ -10,8 +10,16 @@ terraform {
       version = "~> 5.0"
     }
   }
-}
 
+  backend "s3" {
+    bucket         = "terraform-state-879765115308-fargate"
+    key            = "fargate/terraform.tfstate"
+    region         = "eu-west-1"
+    dynamodb_table = "terraform-state-lock"
+    encrypt        = true
+  }
+
+}
 provider "aws" {
   region = var.aws_region
 }
